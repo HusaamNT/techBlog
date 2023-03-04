@@ -12,9 +12,6 @@ Posts.init(
       primaryKey: true,
       autoIncrement:true
     },
-    Image: {
-      type: DataTypes.STRING,
-    },
     Bio: {
       type: DataTypes.STRING,
     },
