@@ -1,0 +1,23 @@
+
+<mainbody>
+    const template = Handlebars.compile(`
+        <div class="post-card">
+            <div class="post-header">
+              <img src="profile-pic.jpg" alt="Profile Picture">
+              <div class="post-info">
+                <h2>{{Username}}</h2>
+                <p>{{Timestamp}}</p>
+              </div>
+            </div>
+            <div class="post-content">
+              <p>{{Bio}}</p>
+              <img src="post-image.jpg" alt="Post Image">
+            </div>
+            <div class="post-footer">
+              <a href="#">Like</a>
+              <a href="#">Comment</a>
+              <a href="#">Share</a>
+            </div>
+          </div>
+                `);
+    </mainbody>

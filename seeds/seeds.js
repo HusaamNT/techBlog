@@ -8,7 +8,7 @@ const seedAll = async () => {
     await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
   
-  await seedAccounts();
+  await seedAccount();
   console.log('\n----- ACCOUNTS SEEDED -----\n');
 
   await seedPost();
