@@ -40,8 +40,31 @@ router.post("/login", async (req, res) => {
 }
 });
 
-router.get("/", async (req, res) =>{
+router.get("/accounts", async (req, res) =>{
     try{
         const accountData = await Accounts.findAll
+        console.log(accountData);
+        res.status(200).json(accountData)
+    }catch(err){  
+      res.status(500).json(err)
     }
+})
+
+router.post("/create", async(req,res) =>{
+  try{
+    const newAccount ={
+      Email: req.body.email,
+      Username: req.body.username,
+      Password: req.body.password
+    }
+    newAccount.Password = await bcrypt.hash(newAccountData.Password, 10);
+    await Accounts.create(newAccountData);
+    req.session.username = req.body.username
+    req.session.save(() => {
+      res.status(200).json(newAccountData);
+    })
+  } catch (err) {
+    console.log(err)
+    res.status(400).json(err);
+  }
 })
