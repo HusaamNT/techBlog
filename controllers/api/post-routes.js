@@ -25,5 +25,25 @@ router.get("/:id", async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+
+router.post("/post", async (req, res) => {
+    try{
+      if (!req.user) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+      const postData = {
+        title: req.body.title,
+        bio: req.body.bio,
+        author: req.user.id
+      }
+      const post = await Post.create(postData);
+      return res.status(201).json({ post });
+    }catch(err){
+      console.error(err);
+      return res.status(500).json({ error: 'Server Error' });
+    }
+  })
+  
+
 });
 module.exports = router;

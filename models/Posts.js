@@ -12,7 +12,10 @@ Posts.init(
       primaryKey: true,
       autoIncrement:true
     },
-    Bio: {
+    title: {
+      type: DataTypes.STRING,
+    },
+    bio: {
       type: DataTypes.STRING,
     },
     account_id:{
