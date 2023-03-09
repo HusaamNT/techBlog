@@ -2,27 +2,33 @@ const Posts = require("../models/Posts");
 
 const postsData = [
 {
-    Bio: "Welcome to my tech page!",
+    title: "Welcome to my tech page!",
+    bio: "Hi there, welcome to my page, this post is epic, please comment to show your support!",
     account_id:1
 },
 {
-    Bio: "This code will help you out to stay active on a Teams chat!",
+    title: "This code will help you out to stay active on a Teams chat!",
+    bio: "Hi there, welcome to my page, this post is epic, please comment to show your support!",
     account_id:1
 },
 {
-    Bio: "New aPhone looks crazy!",
+    title: "New aPhone looks crazy!",
+    bio: "Hi there, welcome to my page, this post is epic, please comment to show your support!",
     account_id:2
 },
 {
-    Bio: "Any thoughts on the new Dell pc?",
+    title: "Any thoughts on the new Dell pc?",
+    bio: "Hi there, welcome to my page, this post is epic, please comment to show your support!",
     account_id:2
 },
 {
-    Bio: "checkout my new pc build",
+    title: "checkout my new pc build",
+    bio: "Hi there, welcome to my page, this post is epic, please comment to show your support!",
     account_id:3
 },
 {
-    Bio: "the newest mvidia gpus arent worth the price for the performance increase",
+    title: "the newest mvidia gpus arent worth the price for the performance increase",
+    bio: "Hi there, welcome to my page, this post is epic, please comment to show your support!",
     account_id:3
 }
 ];

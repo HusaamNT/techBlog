@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { Posts } = require("../../models/Accounts");
+const { Posts } = require("../../models/Posts");
+const { Comments } = require("../../models/Comments");
 const { v4: uuid } = require("uuid");
 const bcrypt = require("bcrypt");
 
@@ -9,6 +10,7 @@ router.get("/", async (req, res) => {
     console.log(postData);
     res.status(200).json(postData);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -37,13 +39,21 @@ router.post("/post", async (req, res) => {
         author: req.user.id
       }
       const post = await Post.create(postData);
-      return res.status(201).json({ post });
-    }catch(err){
+      
+      const commentData = {
+        content: req.body.comment,
+        authorId: req.user.id,
+        postId: post.id
+    }
+    const comment = await Comments.create(commentData);
+    return res.status(201).json({ post, comment });
+
+    } catch(err){
       console.error(err);
       return res.status(500).json({ error: 'Server Error' });
     }
   })
-  
+
 
 });
 module.exports = router;

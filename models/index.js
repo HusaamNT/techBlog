@@ -1,5 +1,6 @@
 const Posts = require("./Posts");
 const Accounts = require("./Accounts");
+const Comments = require("./Comments");
 
 Accounts.hasMany(Posts, {
   foreignKey: "account_id",
@@ -13,7 +14,7 @@ Posts.hasMany(Comments, {
   foreignKey: "postId",
 });
 
-Comment.belongsTo(models.Post, {
+Comments.belongsTo(Posts, {
   foreignKey: "postId",
 });
 module.exports = {
