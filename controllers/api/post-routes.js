@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const { Posts } = require("../../models/Posts");
-const { Comments } = require("../../models/Comments");
+const Posts = require("../../models/Posts");
+const Comments = require("../../models/Comments");
 const { v4: uuid } = require("uuid");
 const bcrypt = require("bcrypt");
 
